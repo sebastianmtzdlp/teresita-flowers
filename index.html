@@ -9,6 +9,83 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .sobre {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      padding: 120px 0;
+      border-bottom: 1px solid var(--linea);
+    }
+    .sobre h2 {
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      line-height: 1.15;
+    }
+    .sobre p {
+      max-width: 34em;
+      margin-bottom: 1.2em;
+      color: #4d4a44;
+    }
+    .sobre p:last-child { margin-bottom: 0; }
+
+    .destacados {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 24px;
+      padding: 120px 0 0;
+      align-items: end;
+    }
+    .destacados figure img {
+      width: 100%;
+      object-fit: cover;
+    }
+    .destacados figure:nth-child(1) img { aspect-ratio: 3 / 4; }
+    .destacados figure:nth-child(2) img,
+    .destacados figure:nth-child(3) img { aspect-ratio: 3 / 4; }
+    .destacados figcaption {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: var(--rosa);
+    }
+    .ver-todos {
+      margin-top: 56px;
+      text-align: right;
+    }
+
+    .cierre-inicio {
+      margin-top: 140px;
+      padding: 120px 0;
+      background: var(--musgo);
+      color: #efe9e1;
+      text-align: center;
+    }
+    .cierre-inicio h2 {
+      color: #efe9e1;
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .cierre-inicio p {
+      max-width: 440px;
+      margin: 0 auto 40px;
+      opacity: 0.85;
+    }
+    .cierre-inicio .enlace {
+      border-color: var(--marfil);
+      color: var(--marfil);
+    }
+    .cierre-inicio .enlace:hover {
+      background: var(--marfil);
+      color: var(--musgo);
+    }
+
+    @media (max-width: 860px) {
+      .sobre { grid-template-columns: 1fr; gap: 24px; padding: 80px 0; }
+      .destacados { grid-template-columns: 1fr; gap: 40px; padding-top: 80px; }
+      .ver-todos { text-align: left; }
+      .cierre-inicio { margin-top: 100px; padding: 90px 24px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,15 +107,44 @@
   </section>
 
   <main class="pagina">
-    <p class="intro">Cada arreglo se diseña según la ocasión, los colores que te gustan y el lugar donde va a estar.</p>
 
-    <ul class="accesos">
+    <div class="sobre">
+      <h2>Cada arreglo se diseña contigo</h2>
+      <div>
+        <p>Empezamos por la ocasión, el lugar y los colores que te gustan. Con eso armamos un arreglo que se ve bien donde va a estar, ya sea una mesa, una entrada o una sala.</p>
+        <p>Cada arreglo se hace a mano, para que sea único y no un modelo repetido.</p>
+      </div>
+    </div>
+
+    <section class="destacados" aria-label="Trabajos destacados">
+      <figure>
+        <img src="img/boda.jpg" alt="Mesa de boda en patio con fuente y flores blancas">
+        <figcaption>Mesa para boda en patio</figcaption>
+      </figure>
+      <figure>
+        <img src="img/xv.jpg" alt="Mesa con ramos de colores en jarrones">
+        <figcaption>Ramos de colores para celebrar</figcaption>
+      </figure>
+      <figure>
+        <img src="img/centro-mesa.jpg" alt="Centro de mesa con velas y flores rojas">
+        <figcaption>Centro de mesa con velas</figcaption>
+      </figure>
+    </section>
+    <p class="ver-todos"><a class="enlace" href="trabajos.html">Ver todos los trabajos</a></p>
+
+    <ul class="accesos" style="margin-top: 120px;">
       <li><a href="servicios.html">Servicios <span>Regalos, eventos y condolencias</span></a></li>
-      <li><a href="trabajos.html">Trabajos <span>Algunos arreglos recientes</span></a></li>
       <li><a href="eventos.html">Eventos <span>Bodas, XV años y celebraciones</span></a></li>
       <li><a href="contacto.html">Contacto <span>Escríbenos por WhatsApp</span></a></li>
     </ul>
+
   </main>
+
+  <section class="cierre-inicio">
+    <h2>¿Tienes una fecha en mente?</h2>
+    <p>Cuéntanos la ocasión y lo que imaginas. Te respondemos por WhatsApp con ideas y una cotización.</p>
+    <a class="enlace" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20pedir%20un%20arreglo%20floral" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  </section>
 
   <footer>
     <span>© 2026 Teresita Flowers</span>
