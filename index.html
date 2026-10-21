@@ -58,6 +58,21 @@
       transition: background 0.2s;
     }
     .boton:hover { background: #4a6149; }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+    .galeria img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -78,6 +93,12 @@
     <p>Cumpleaños, aniversarios, condolencias o simplemente porque sí. Creamos un arreglo a tu medida.</p>
     <a class="boton" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20pedir%20un%20arreglo%20floral" target="_blank" rel="noopener">Pedir por WhatsApp</a>
   </section>
+
+  <div class="galeria">
+    <img src="img/boda.jpg" alt="Mesa de boda en patio con fuente y flores blancas">
+    <img src="img/xv.jpg" alt="Mesa con ramos de colores en jarrones para celebraciones">
+    <img src="img/centro-mesa.jpg" alt="Centro de mesa con velas y flores rojas">
+  </div>
 
   <footer>
     &copy; 2026 Teresita Flowers · teresitaflowers.garden
