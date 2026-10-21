@@ -3,370 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teresita Flowers | Arreglos florales hechos a mano</title>
-  <meta name="description" content="Arreglos florales hechos a mano para bodas, XV años, cumpleaños y eventos. Pide el tuyo por WhatsApp.">
+  <title>Teresita Flowers</title>
+  <meta name="description" content="Arreglos florales hechos a mano para regalos y eventos. Escríbenos por WhatsApp.">
   <style>
     :root {
-      --rosa: #d98ba0;
-      --rosa-suave: #f6e3e8;
-      --verde: #5f7a61;
-      --verde-oscuro: #3f5141;
-      --crema: #fdf8f4;
-      --arena: #f3ebe3;
-      --texto: #3b3a36;
-      --gris: #8a8680;
+      --verde: #3f5141;
+      --crema: #fbf7f2;
+      --texto: #2f2e2a;
+      --gris: #857f78;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
     body {
       font-family: Georgia, "Times New Roman", serif;
       background: var(--crema);
       color: var(--texto);
-      line-height: 1.65;
+      line-height: 1.6;
     }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; }
+    img { display: block; width: 100%; height: auto; }
+    a { color: var(--verde); }
 
-    /* Navegación */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(253, 248, 244, 0.92);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid #ece3da;
-    }
-    .nav-inner {
-      max-width: 1080px;
+    .wrap {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 0 24px;
+    }
+
+    header.top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      align-items: baseline;
+      padding-top: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #e6dcd2;
     }
-    .marca {
-      font-size: 1.25rem;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      color: var(--verde-oscuro);
-    }
-    .nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .nav-links a {
-      text-decoration: none;
+    header.top .marca {
+      font-size: 1.1rem;
       color: var(--verde);
+      text-decoration: none;
+    }
+    header.top nav a {
+      margin-left: 20px;
       font-size: 0.95rem;
+      color: var(--texto);
+      text-decoration: none;
     }
-    .nav-links a:hover { color: var(--rosa); }
 
-    /* Hero */
-    .hero {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 72px 24px 56px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
+    .intro {
+      padding-top: 72px;
+      padding-bottom: 64px;
+      max-width: 620px;
     }
-    .hero-eyebrow {
-      font-size: 0.8rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--rosa);
-      margin-bottom: 18px;
-    }
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
+    .intro h1 {
       font-weight: normal;
-      line-height: 1.1;
-      color: var(--verde-oscuro);
+      font-size: 2.6rem;
+      line-height: 1.15;
+      color: var(--verde);
       margin-bottom: 20px;
     }
-    .hero p {
+    .intro p {
       font-size: 1.1rem;
-      color: #5a5852;
-      margin-bottom: 32px;
-      max-width: 440px;
+      color: #4d4a44;
+      margin-bottom: 28px;
     }
-    .hero-foto img {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      border-radius: 200px 200px 16px 16px;
-    }
-
-    /* Botones */
-    .boton {
+    .intro .enlace {
       display: inline-block;
-      padding: 14px 32px;
       background: var(--verde);
       color: #fff;
-      text-decoration: none;
-      border-radius: 999px;
-      font-size: 1rem;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .boton:hover { background: var(--verde-oscuro); transform: translateY(-1px); }
-    .boton-secundario {
-      display: inline-block;
-      margin-left: 12px;
-      padding: 14px 24px;
-      color: var(--verde-oscuro);
+      padding: 12px 26px;
       text-decoration: none;
       font-size: 1rem;
-      border-bottom: 1px solid var(--rosa);
     }
 
-    /* Secciones */
-    .seccion {
-      padding: 80px 24px;
-    }
-    .seccion.fondo-arena { background: var(--arena); }
-    .contenedor {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-    .titulo {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .titulo .eyebrow {
-      font-size: 0.8rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--rosa);
-      margin-bottom: 10px;
-    }
-    .titulo h2 {
-      font-weight: normal;
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      color: var(--verde-oscuro);
-    }
-
-    /* Servicios */
-    .servicios {
+    .fotos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 20px;
+      margin-bottom: 80px;
     }
-    .servicio {
-      background: #fff;
-      border-radius: 16px;
-      padding: 32px 28px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    .fotos img:first-child { grid-row: span 2; }
+    .fotos img { object-fit: cover; height: 100%; }
+
+    .que-hacemos {
+      border-top: 1px solid #e6dcd2;
+      padding-top: 48px;
+      padding-bottom: 64px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
     }
-    .servicio .icono {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-    }
-    .servicio h3 {
+    .que-hacemos h2 {
       font-weight: normal;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       color: var(--verde);
-      margin-bottom: 8px;
     }
-    .servicio p {
-      font-size: 0.97rem;
-      color: #5a5852;
+    .que-hacemos ul {
+      list-style: none;
     }
-
-    /* Galería */
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+    .que-hacemos li {
+      padding: 14px 0;
+      border-bottom: 1px solid #ebe3da;
     }
-    .galeria img {
-      width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      border-radius: 14px;
-    }
-    .galeria-cta {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    /* Proceso */
-    .pasos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px;
-      counter-reset: paso;
-    }
-    .paso {
-      text-align: center;
-    }
-    .paso .numero {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: var(--rosa-suave);
-      color: var(--verde-oscuro);
-      font-size: 1.2rem;
-      margin-bottom: 16px;
-    }
-    .paso h3 {
+    .que-hacemos li:first-child { padding-top: 0; }
+    .que-hacemos li strong {
       font-weight: normal;
-      font-size: 1.2rem;
-      color: var(--verde-oscuro);
-      margin-bottom: 8px;
+      display: block;
+      color: var(--texto);
     }
-    .paso p {
-      font-size: 0.97rem;
-      color: #5a5852;
+    .que-hacemos li span {
+      color: #5a5750;
+      font-size: 0.98rem;
     }
 
-    /* Cierre */
-    .cierre {
-      background: var(--verde-oscuro);
-      color: #f6efe9;
-      text-align: center;
-      padding: 88px 24px;
+    .contacto {
+      border-top: 1px solid #e6dcd2;
+      padding-top: 48px;
+      padding-bottom: 80px;
     }
-    .cierre h2 {
-      font-weight: normal;
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      margin-bottom: 16px;
+    .contacto p {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      color: #4d4a44;
     }
-    .cierre p {
-      max-width: 520px;
-      margin: 0 auto 32px;
-      color: #d9e2d6;
+    .contacto a.enlace {
+      display: inline-block;
+      background: var(--verde);
+      color: #fff;
+      padding: 12px 26px;
+      text-decoration: none;
     }
-    .cierre .boton {
-      background: var(--rosa);
-      color: #3b2a30;
+    .contacto .evento {
+      display: block;
+      margin-top: 20px;
+      font-size: 0.95rem;
     }
-    .cierre .boton:hover { background: #e8a2b3; }
 
     footer {
-      text-align: center;
-      padding: 32px 20px;
-      font-size: 0.9rem;
+      border-top: 1px solid #e6dcd2;
+      padding: 24px 0 40px;
+      font-size: 0.85rem;
       color: var(--gris);
     }
-    footer a { color: var(--verde); }
 
-    @media (max-width: 760px) {
-      .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 32px; }
-      .hero-foto img { aspect-ratio: 4 / 5; }
-      .galeria { grid-template-columns: 1fr; }
-      .boton-secundario { margin: 12px 0 0; display: block; }
-      .nav-links { gap: 16px; }
+    @media (max-width: 720px) {
+      header.top { flex-direction: column; gap: 12px; }
+      header.top nav a { margin: 0 14px 0 0; }
+      .intro h1 { font-size: 2rem; }
+      .fotos { grid-template-columns: 1fr; }
+      .fotos img:first-child { grid-row: auto; }
+      .que-hacemos { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a class="marca" href="#inicio">TERESITA FLOWERS</a>
-      <div class="nav-links">
-        <a href="#servicios">Servicios</a>
+  <div class="wrap">
+
+    <header class="top">
+      <a class="marca" href="index.html">Teresita Flowers</a>
+      <nav>
         <a href="#trabajos">Trabajos</a>
         <a href="eventos.html">Eventos</a>
         <a href="#contacto">Contacto</a>
-      </div>
-    </div>
-  </nav>
+      </nav>
+    </header>
 
-  <header class="hero" id="inicio">
-    <div>
-      <p class="hero-eyebrow">Arreglos florales hechos a mano</p>
-      <h1>Flores que cuentan tu momento</h1>
-      <p>Creamos cada arreglo a tu medida, pensando en la ocasión, los colores y el lugar. Para regalar, celebrar o acompañar.</p>
-      <a class="boton" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20pedir%20un%20arreglo%20floral" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      <a class="boton-secundario" href="eventos.html">Flores para eventos</a>
-    </div>
-    <div class="hero-foto">
+    <section class="intro">
+      <h1>Arreglos florales hechos a mano</h1>
+      <p>Para regalar, celebrar o acompañar. Cada arreglo se hace según la ocasión, los colores que te gustan y el espacio donde va a estar.</p>
+      <a class="enlace" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20pedir%20un%20arreglo%20floral" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </section>
+
+    <section class="fotos" id="trabajos">
       <img src="img/boda.jpg" alt="Mesa de boda en patio con fuente y flores blancas">
-    </div>
-  </header>
+      <img src="img/xv.jpg" alt="Mesa con ramos de colores en jarrones">
+      <img src="img/centro-mesa.jpg" alt="Centro de mesa con velas y flores rojas">
+    </section>
 
-  <section class="seccion fondo-arena" id="servicios">
-    <div class="contenedor">
-      <div class="titulo">
-        <p class="eyebrow">Lo que hacemos</p>
-        <h2>Para cada ocasión</h2>
-      </div>
-      <div class="servicios">
-        <div class="servicio">
-          <div class="icono">🌸</div>
-          <h3>Arreglos de regalo</h3>
-          <p>Ramos y arreglos para cumpleaños, aniversarios o simplemente porque sí.</p>
-        </div>
-        <div class="servicio">
-          <div class="icono">🕊️</div>
-          <h3>Condolencias</h3>
-          <p>Arreglos sobrios y delicados para acompañar en momentos difíciles.</p>
-        </div>
-        <div class="servicio">
-          <div class="icono">💐</div>
-          <h3>Eventos</h3>
-          <p>Bodas, XV años y celebraciones con centros de mesa y decoración floral.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="que-hacemos">
+      <h2>Qué hacemos</h2>
+      <ul>
+        <li><strong>Arreglos de regalo</strong><span>Ramos y arreglos para cumpleaños, aniversarios o cualquier día.</span></li>
+        <li><strong>Flores para eventos</strong><span>Bodas, XV años y reuniones. Centros de mesa y decoración floral. <a href="eventos.html">Ver más</a>.</span></li>
+        <li><strong>Condolencias</strong><span>Arreglos sencillos para acompañar en momentos difíciles.</span></li>
+      </ul>
+    </section>
 
-  <section class="seccion" id="trabajos">
-    <div class="contenedor">
-      <div class="titulo">
-        <p class="eyebrow">Trabajos recientes</p>
-        <h2>Algunos arreglos</h2>
-      </div>
-      <div class="galeria">
-        <img src="img/boda.jpg" alt="Mesa de boda en patio con fuente y flores blancas">
-        <img src="img/xv.jpg" alt="Mesa con ramos de colores en jarrones para celebraciones">
-        <img src="img/centro-mesa.jpg" alt="Centro de mesa con velas y flores rojas">
-      </div>
-      <div class="galeria-cta">
-        <a class="boton-secundario" href="eventos.html">Ver flores para eventos</a>
-      </div>
-    </div>
-  </section>
+    <section class="contacto" id="contacto">
+      <p>Escríbenos con la fecha y lo que tienes en mente. Te respondemos por WhatsApp.</p>
+      <a class="enlace" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20pedir%20un%20arreglo%20floral" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </section>
 
-  <section class="seccion fondo-arena" id="proceso">
-    <div class="contenedor">
-      <div class="titulo">
-        <p class="eyebrow">Cómo funciona</p>
-        <h2>Tu pedido en tres pasos</h2>
-      </div>
-      <div class="pasos">
-        <div class="paso">
-          <div class="numero">1</div>
-          <h3>Escríbenos</h3>
-          <p>Cuéntanos la ocasión, la fecha y lo que te gusta por WhatsApp.</p>
-        </div>
-        <div class="paso">
-          <div class="numero">2</div>
-          <h3>Diseñamos juntas</h3>
-          <p>Te enviamos ideas, colores y una cotización según tu pedido.</p>
-        </div>
-        <div class="paso">
-          <div class="numero">3</div>
-          <h3>Lo preparamos</h3>
-          <p>Confirmas, preparamos tu arreglo y lo entregamos en el día acordado.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <footer>
+      &copy; 2026 Teresita Flowers · teresitaflowers.garden
+    </footer>
 
-  <section class="cierre" id="contacto">
-    <h2>¿Tienes una fecha en mente?</h2>
-    <p>Escríbenos y te ayudamos a encontrar el arreglo perfecto para tu momento.</p>
-    <a class="boton" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20pedir%20un%20arreglo%20floral" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-  </section>
-
-  <footer>
-    &copy; 2026 Teresita Flowers · teresitaflowers.garden
-  </footer>
+  </div>
 
 </body>
 </html>
