@@ -8,228 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --marfil: #f6f2ec;
-      --musgo: #23301f;
-      --tinta: #2b2a26;
-      --rosa: #b99189;
-      --linea: #ddd3c7;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--marfil);
-      color: var(--tinta);
-      font-family: "Jost", "Helvetica Neue", Arial, sans-serif;
-      font-weight: 300;
-      font-size: 1.05rem;
-      line-height: 1.75;
-    }
-    img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    a { color: inherit; }
-
-    .serif {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-weight: 400;
-    }
-
-    /* Navegación */
-    .top {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 5;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 32px 56px;
-      color: #fbf8f3;
-    }
-    .top .marca {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-    }
-    .top nav a {
-      margin-left: 36px;
-      text-decoration: none;
-      font-size: 0.92rem;
-      letter-spacing: 0.02em;
-      opacity: 0.9;
-    }
-    .top nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      height: 100vh;
-      min-height: 620px;
-      overflow: hidden;
-      color: #fbf8f3;
-    }
-    .hero img {
-      position: absolute;
-      inset: 0;
-      filter: brightness(0.7);
-      animation: aparece 1.6s ease-out both;
-    }
-    .hero .texto {
-      position: absolute;
-      left: 56px;
-      bottom: 88px;
-      max-width: 560px;
-    }
-    .hero h1 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(3rem, 6.5vw, 5.4rem);
-      line-height: 1.02;
-      margin-bottom: 24px;
-    }
-    .hero p {
-      font-size: 1.05rem;
-      max-width: 380px;
-      margin-bottom: 36px;
-      opacity: 0.92;
-    }
-    .enlace {
-      display: inline-block;
-      padding: 14px 34px;
-      border: 1px solid currentColor;
-      color: inherit;
-      text-decoration: none;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      transition: background 0.3s, color 0.3s;
-    }
-    .enlace:hover { background: #fbf8f3; color: var(--musgo); }
-
-    /* Secciones */
-    .bloque {
-      padding: 160px 56px;
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 80px;
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-    .bloque h2 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(2rem, 3.4vw, 2.9rem);
-      line-height: 1.15;
-      color: var(--musgo);
-    }
-    .bloque .cuerpo p {
-      max-width: 34em;
-      margin-bottom: 1.2em;
-    }
-    .bloque .cuerpo p:last-child { margin-bottom: 0; }
-
-    /* Lista de servicios */
-    .servicios {
-      list-style: none;
-      border-top: 1px solid var(--linea);
-    }
-    .servicios li {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 32px;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--linea);
-    }
-    .servicios h3 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-weight: 400;
-      font-size: 1.5rem;
-      color: var(--musgo);
-    }
-    .servicios p { color: #55524b; }
-
-    /* Galería */
-    .galeria {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 56px 160px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .galeria figure { position: relative; }
-    .galeria figure:nth-child(1) { grid-row: span 2; }
-    .galeria figure:nth-child(1) img { aspect-ratio: 3 / 4; }
-    .galeria figure:nth-child(2) img { aspect-ratio: 4 / 3; }
-    .galeria figure:nth-child(3) img { aspect-ratio: 4 / 3; }
-    .galeria figcaption {
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: var(--rosa);
-    }
-
-    /* Contacto */
-    .contacto {
-      background: var(--musgo);
-      color: #efe9e1;
-      padding: 150px 56px;
-      text-align: center;
-    }
-    .contacto h2 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-    .contacto p {
-      max-width: 440px;
-      margin: 0 auto 40px;
-      opacity: 0.85;
-    }
-    .contacto .enlace:hover { color: var(--musgo); }
-
-    footer {
-      padding: 40px 56px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      color: #8a847b;
-    }
-
-    @keyframes aparece {
-      from { opacity: 0; transform: scale(1.03); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @media (max-width: 860px) {
-      .top { padding: 24px; flex-direction: column; gap: 12px; }
-      .top nav a { margin: 0 16px 0 0; }
-      .hero .texto { left: 24px; right: 24px; bottom: 56px; }
-      .bloque { grid-template-columns: 1fr; gap: 40px; padding: 100px 24px; }
-      .servicios li { grid-template-columns: 1fr; gap: 8px; }
-      .galeria { grid-template-columns: 1fr; padding: 0 24px 100px; }
-      .galeria figure:nth-child(1) { grid-row: auto; }
-      .galeria figure:nth-child(1) img { aspect-ratio: 4 / 5; }
-      .contacto { padding: 100px 24px; }
-      footer { padding: 32px 24px; flex-direction: column; gap: 8px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .hero img { animation: none; }
-      html { scroll-behavior: auto; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="top">
     <a class="marca" href="index.html">Teresita Flowers</a>
     <nav>
-      <a href="#servicios">Servicios</a>
-      <a href="#trabajos">Trabajos</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="trabajos.html">Trabajos</a>
       <a href="eventos.html">Eventos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
@@ -237,49 +26,19 @@
     <img src="img/boda.jpg" alt="Mesa de boda en patio con fuente y flores blancas">
     <div class="texto">
       <h1>Flores hechas a mano, para cada momento</h1>
-      <p>Cada arreglo se diseña según la ocasión, los colores que te gustan y el lugar donde va a estar.</p>
-      <a class="enlace" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20pedir%20un%20arreglo%20floral" target="_blank" rel="noopener">Pedir por WhatsApp</a>
     </div>
   </section>
 
-  <section class="bloque" id="servicios">
-    <h2>Lo que hacemos</h2>
-    <ul class="servicios">
-      <li>
-        <h3>Regalos</h3>
-        <p>Ramos y arreglos para cumpleaños, aniversarios o cualquier día que quieras celebrar.</p>
-      </li>
-      <li>
-        <h3>Eventos</h3>
-        <p>Bodas, XV años y reuniones. Centros de mesa y decoración floral a tu medida.</p>
-      </li>
-      <li>
-        <h3>Condolencias</h3>
-        <p>Arreglos sencillos y respetuosos para acompañar en momentos difíciles.</p>
-      </li>
+  <main class="pagina">
+    <p class="intro">Cada arreglo se diseña según la ocasión, los colores que te gustan y el lugar donde va a estar.</p>
+
+    <ul class="accesos">
+      <li><a href="servicios.html">Servicios <span>Regalos, eventos y condolencias</span></a></li>
+      <li><a href="trabajos.html">Trabajos <span>Algunos arreglos recientes</span></a></li>
+      <li><a href="eventos.html">Eventos <span>Bodas, XV años y celebraciones</span></a></li>
+      <li><a href="contacto.html">Contacto <span>Escríbenos por WhatsApp</span></a></li>
     </ul>
-  </section>
-
-  <section class="galeria" id="trabajos">
-    <figure>
-      <img src="img/boda.jpg" alt="Mesa de boda en patio con fuente y flores blancas">
-      <figcaption>Mesa para boda en patio</figcaption>
-    </figure>
-    <figure>
-      <img src="img/xv.jpg" alt="Mesa con ramos de colores en jarrones">
-      <figcaption>Ramos de colores para celebrar</figcaption>
-    </figure>
-    <figure>
-      <img src="img/centro-mesa.jpg" alt="Centro de mesa con velas y flores rojas">
-      <figcaption>Centro de mesa con velas</figcaption>
-    </figure>
-  </section>
-
-  <section class="contacto" id="contacto">
-    <h2>Cuéntanos la fecha<br>y lo que imaginas</h2>
-    <p>Te respondemos por WhatsApp con ideas y una cotización.</p>
-    <a class="enlace" href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quisiera%20pedir%20un%20arreglo%20floral" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-  </section>
+  </main>
 
   <footer>
     <span>© 2026 Teresita Flowers</span>
